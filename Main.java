@@ -1,18 +1,25 @@
 package dag;
-
+import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args)
 	{
 		DirectedAcyclicGraph dag = new DirectedAcyclicGraph();
 		
-		System.out.println(dag.addEdge("A", "A"));
-		System.out.println(dag.addEdge("A", "C"));
-		System.out.println(dag.addEdge("C", "D"));
-		System.out.println(dag.addEdge("C", "E"));
-		System.out.println(dag.addEdge("D", "G"));
-		System.out.println(dag.addEdge("D", "E"));
-		System.out.println(dag.addEdge("E", "A"));
+		Scanner s = new Scanner(System.in);
+		
+	
+		char ch='Y';
+		do
+		{
+			System.out.println("Enter source and destination");
+			String source = s.next();
+			String destination = s.next();
+			System.out.println(dag.addEdge(source, destination));
+			
+			System.out.println("Do you want to continue? Y or N");
+			 ch = s.next().charAt(0);
+		}while(ch=='Y' ||ch=='y');
 		
 		
 	}
