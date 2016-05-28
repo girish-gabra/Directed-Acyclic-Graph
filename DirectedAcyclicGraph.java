@@ -17,7 +17,7 @@ public class DirectedAcyclicGraph {
 		neighbourMap = new HashMap<String,List<String>>();
 	}
 	
-	public void addNode(String node){
+	private void addNode(String node){
 		nodes.add(node);
 	}
 	
@@ -55,9 +55,9 @@ public class DirectedAcyclicGraph {
 	
 	private boolean hasCycle()
 	{
-		Set<String> whiteset = new HashSet<String>();
-		Set<String> blackset = new HashSet<String>();
-		Set<String> greyset = new HashSet<String>();
+		Set<String> whiteset = new HashSet<String>();	// set of vertices initially having all nodes
+		Set<String> blackset = new HashSet<String>();	// set of vertices which has been completely explored
+		Set<String> greyset = new HashSet<String>();	// set of vertices which is currently exploring	
 		
 		for( String node : nodes){
 			whiteset.add(node);

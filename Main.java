@@ -8,7 +8,7 @@ public class Main {
 		
 		Scanner s = new Scanner(System.in);
 		
-	
+		/* Taking input from user through stdin*/
 		char ch='Y';
 		do
 		{
@@ -20,7 +20,7 @@ public class Main {
 			System.out.println("Do you want to continue? Y or N");
 			 ch = s.next().charAt(0);
 		}while(ch=='Y' ||ch=='y');
-		
+		s.close();
 		
 	}
 	
